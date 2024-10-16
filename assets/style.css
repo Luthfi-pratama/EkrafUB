@@ -1,5 +1,6 @@
 /* Reset */
-* {
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,27 +11,29 @@ body {
   background-image: url("image/background.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   color: #ffffff;
 }
 
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-utama {
+  margin-top: 5em;
   text-align: center;
   width: 350px;
   padding: 30px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(239, 237, 237, 0.2);
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(5, 5, 5, 0.2);
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease;
 }
 
-.container:hover {
+.container-utama:hover {
   transform: translateY(-10px);
 }
 
@@ -87,18 +90,58 @@ h2 {
   transform: scale(0.98);
 }
 
+/* Container Mercandise */
 .container-mercandise {
   padding: 2em;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  height: 100%;
+  height: auto;
   margin-top: 10em;
+  gap: 20px; /* Spasi antar gambar */
+  justify-content: center;
 }
 
 .container-mercandise img {
   margin: 20px;
-  width: 30em;
-  height: 30em;
+  width: 25em;
+  height: 25em;
+}
+
+/* Container ekraf */
+.container-ekraf {
+  padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  margin-top: 10em;
+  gap: 20px; /* Spasi antar gambar */
+  justify-content: center;
+}
+
+.container-ekraf img {
+  margin: 20px;
+  width: 25em;
+  height: 25em;
+}
+
+/* Container Produk Ekraf */
+.container-produkekraf {
+  padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  margin-top: 10em;
+  gap: 20px; /* Spasi antar gambar */
+  justify-content: center;
+}
+
+.container-produkekraf img {
+  margin: 20px;
+  width: 25em;
+  height: 25em;
 }
 
 /* Tombol Kembali ke Menu Utama */
@@ -130,12 +173,11 @@ h2 {
   transform: scale(0.98);
 }
 
-@media (max-width: 504px) {
+@media (max-width: 768px) {
   .container {
-    width: 90%;
-    padding: 20px;
-    object-fit: contain;
-    object-position: top;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
   }
 
   h1 {
@@ -152,9 +194,8 @@ h2 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    margin-top: 50px;
+    margin: 10px auto;
     display: flex;
-    flex-direction: column; /* Membuat gambar tetap vertikal (atas-bawah) */
     justify-content: center;
     align-items: center;
     gap: 1px; /* Jarak antar gambar */
@@ -169,13 +210,56 @@ h2 {
     height: auto;
   }
 
-  .container-rodeo {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
+  /* container ekraf*/
+  .container-ekraf {
+    background-color: rgba(239, 237, 237, 0.2);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
-    transition: transform 0.3s ease;
-    width: 80%;
-    height: 35em;
+    border-radius: 20px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 50%;
+    height: auto;
+  }
+
+  .container-ekraf img {
+    width: auto;
+    max-width: 100%; /* Agar gambar sesuai dengan lebar kontainer */
+    height: auto;
+  }
+
+  .container-produkekraf {
+    background-color: rgba(239, 237, 237, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 50%;
+    height: auto;
+  }
+
+  .container-produkekraf img {
+    width: auto;
+    max-width: 100%; /* Agar gambar sesuai dengan lebar kontainer */
+    height: auto;
+  }
+
+  .back-btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #6e8efb;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   }
 }
